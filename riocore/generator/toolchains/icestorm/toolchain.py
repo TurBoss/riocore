@@ -141,7 +141,7 @@ class Toolchain:
                 makefile_data.append(f"	openFPGALoader -b {board.lower()} $(PROJECT).fs -f")
             else:
                 makefile_data.append(f"load: {bitfileName}")
-                makefile_data.append(f"	 openFPGALoader -b ice40_generic {bitfileName}")
+                makefile_data.append(f"	 openFPGALoader -b {board.lower()} {bitfileName}")
 
         makefile_data.append("	cp -v hash_new.txt hash_flashed.txt")
         makefile_data.append("")

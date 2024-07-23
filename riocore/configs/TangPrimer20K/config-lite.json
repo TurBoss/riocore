@@ -1,0 +1,196 @@
+{
+    "name": "TangPrimer20K",
+    "description": "TangPrimer20K Ext-Lite",
+    "boardcfg": "TangPrimer20K",
+    "protocol": "UDP",
+    "plugins": [
+        {
+            "type": "w5500",
+            "mac": "AA:AF:FA:CC:E3:1C",
+            "ip": "192.168.10.194",
+            "port": 2390,
+            "pins": {
+                "mosi": {
+                    "pin": "F10"
+                },
+                "miso": {
+                    "pin": "D11"
+                },
+                "sclk": {
+                    "pin": "E10"
+                },
+                "sel": {
+                    "pin": "D10"
+                }
+            },
+            "name": "ethernet"
+        },
+        {
+            "type": "stepdir",
+            "pins": {
+                "step": {
+                    "pin": "C9"
+                },
+                "dir": {
+                    "pin": "A9"
+                }
+            },
+            "signals": {
+                "velocity": {
+                    "function": "",
+                    "net": ""
+                }
+            },
+            "name": "X Axis",
+            "axis": "X",
+            "is_joint": true
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "P6"
+                }
+            },
+            "name": "LED0"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "T6"
+                }
+            },
+            "name": "LED1"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "R8"
+                }
+            },
+            "name": "LED2"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "T7"
+                }
+            },
+            "name": "LED3"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "P8"
+                }
+            },
+            "name": "LED4"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "T8"
+                }
+            },
+            "name": "LED5"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "P9"
+                }
+            },
+            "name": "LED6"
+        },
+        {
+            "type": "bitout",
+            "pins": {
+                "bit": {
+                    "pin": "T9"
+                }
+            },
+            "name": "LED7"
+        },
+        {
+            "type": "bitin",
+            "pins": {
+                "bit": {
+                    "pin": "P7",
+                    "modifier": [
+                        {
+                            "type": "invert"
+                        }
+                    ]
+                }
+            },
+            "signals": {
+                "bit": {
+                    "net": ""
+                }
+            },
+            "name": "BTN0"
+        },
+        {
+            "type": "bitin",
+            "pins": {
+                "bit": {
+                    "pin": "R7",
+                    "modifier": [
+                        {
+                            "type": "invert"
+                        }
+                    ]
+                }
+            },
+            "name": "BTN1"
+        },
+        {
+            "type": "bitin",
+            "pins": {
+                "bit": {
+                    "pin": "L8",
+                    "modifier": [
+                        {
+                            "type": "invert"
+                        }
+                    ]
+                }
+            },
+            "name": "BTN2"
+        },
+        {
+            "type": "bitin",
+            "pins": {
+                "bit": {
+                    "pin": "M6",
+                    "modifier": [
+                        {
+                            "type": "invert"
+                        }
+                    ]
+                }
+            },
+            "name": "BTN3"
+        }
+    ],
+    "machinetype": "mill",
+    "linuxcnc": {
+        "classicladder": {
+            "enable": false
+        },
+        "ini": {
+            "KINS": {
+                "KINEMATICS": "trivkins coordinates=XYZ"
+            },
+            "TRAJ": {
+                "COORDINATES": "XYZ"
+            }
+        }
+    }
+}
